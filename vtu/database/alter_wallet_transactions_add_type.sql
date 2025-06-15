@@ -1,0 +1,2 @@
+ALTER TABLE wallet_transactions
+ADD COLUMN type VARCHAR(32) DEFAULT NULL AFTER id;

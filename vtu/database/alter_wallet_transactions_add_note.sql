@@ -1,0 +1,2 @@
+ALTER TABLE wallet_transactions
+ADD COLUMN note VARCHAR(255) DEFAULT NULL AFTER bank;

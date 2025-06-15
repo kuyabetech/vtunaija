@@ -1,0 +1,166 @@
+/* ===== Dashboard Layout ===== */
+.dashboard-container {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  min-height: 100vh;
+}
+
+.sidebar {
+  background-color: var(--dark);
+  color: var(--light);
+  padding: 1rem;
+  box-shadow: var(--shadow-md);
+}
+
+.main-content {
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+}
+
+@media (max-width: 992px) {
+  .dashboard-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    bottom: 0;
+    z-index: 1000;
+    transition: left 0.3s ease;
+  }
+  
+  .sidebar.show {
+    left: 0;
+  }
+  
+  .main-content {
+    margin-left: 0;
+  }
+}
+
+/* ===== Sidebar Styles ===== */
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.sidebar-nav {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sidebar-item {
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  color: rgba(255,255,255,0.8);
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+}
+
+.sidebar-link:hover {
+  color: var(--white);
+  background-color: rgba(255,255,255,0.1);
+  text-decoration: none;
+}
+
+.sidebar-link.active {
+  color: var(--white);
+  background-color: var(--primary);
+}
+
+.sidebar-link i {
+  margin-right: 0.75rem;
+  width: 20px;
+  text-align: center;
+}
+
+/* ===== Stats Cards ===== */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.stat-card {
+  background-color: var(--white);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid var(--primary);
+}
+
+.stat-card.secondary {
+  border-left-color: var(--secondary);
+}
+
+.stat-card.warning {
+  border-left-color: var(--warning);
+}
+
+.stat-card.danger {
+  border-left-color: var(--danger);
+}
+
+.stat-card h3 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+  color: var(--gray);
+  margin-bottom: 0;
+}
+
+/* ===== Activity Feed ===== */
+.activity-feed {
+  list-style: none;
+  padding-left: 0;
+}
+
+.activity-item {
+  position: relative;
+  padding-left: 2rem;
+  padding-bottom: 1.5rem;
+  border-left: 2px solid #eee;
+}
+
+.activity-item:last-child {
+  padding-bottom: 0;
+  border-left-color: transparent;
+}
+
+.activity-item::before {
+  content: '';
+  position: absolute;
+  left: -7px;
+  top: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  border: 2px solid var(--white);
+}
+
+.activity-time {
+  font-size: 0.8rem;
+  color: var(--gray);
+}
+
+.activity-content {
+  background-color: var(--white);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  margin-top: 0.5rem;
+  box-shadow: var(--shadow-sm);
+}

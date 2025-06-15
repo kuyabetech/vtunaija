@@ -1,0 +1,87 @@
+/* ===== Mobile-First Responsive Styles ===== */
+@media (max-width: 767.98px) {
+  /* General Layout */
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  /* Navigation */
+  .navbar-brand {
+    font-size: 1rem;
+  }
+  
+  /* Cards */
+  .card {
+    margin-bottom: 1rem;
+  }
+  
+  .card-body {
+    padding: 1rem;
+  }
+  
+  /* Forms */
+  .form-control {
+    padding: 0.75rem;
+  }
+  
+  /* Dashboard Adjustments */
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Hide less important elements */
+  .desktop-only {
+    display: none !important;
+  }
+  
+  /* Show mobile elements */
+  .mobile-only {
+    display: block !important;
+  }
+  
+  /* Adjust table layouts */
+  .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Button sizes */
+  .btn {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* ===== Tablet Styles ===== */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Adjust sidebar */
+  .sidebar {
+    width: 200px;
+  }
+  
+  .main-content {
+    margin-left: 200px;
+  }
+}
+
+/* ===== Dark Mode Overrides ===== */
+@media (prefers-color-scheme: dark) {
+  .stat-card {
+    background-color: #34495e;
+    color: var(--light);
+  }
+  
+  .activity-content {
+    background-color: #34495e;
+    color: var(--light);
+  }
+  
+  .sidebar {
+    background-color: #2c3e50;
+  }
+}
